@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Meromail - Request Early Access</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Meromail offers secure, privacy-focused email addresses for Nepal. Get your own @meromail.com today!">
+    <meta name="keywords" content="Meromail, Email, Secure Email Nepal, Privacy Email, Meromail Nepal">
+    <meta name="author" content="Amit Gautam">
+
+    <!-- OpenGraph Meta Tags (for social media sharing) -->
+    <meta property="og:title" content="Meromail - Secure Email for Nepal">
+    <meta property="og:description" content="Request your @meromail.com email address today. Privacy-first email hosting, made in Nepal.">
+    <meta property="og:image" content="https://meromail.com/og-image.png"> <!-- Update this if needed -->
+    <meta property="og:url" content="https://meromail.com/signup.html">
+    <meta property="og:type" content="website">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #0D0D0D;
+            color: #F0F0F0;
+            text-align: center;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+        h1 {
+            font-size: 2.8em;
+            margin-top: 20px;
+            animation: fadeInDown 1.5s;
+        }
+        p.subtitle {
+            font-size: 1.2em;
+            color: #aaa;
+            margin-bottom: 30px;
+            animation: fadeInDown 2s;
+        }
+        .form-container {
+            background: rgba(17,17,17,0.9);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(29,185,84,0.5);
+            max-width: 800px;
+            margin: 0 auto 30px auto;
+            animation: fadeInUp 2s;
+        }
+        iframe {
+            width: 100%;
+            height: 1414px;
+            border: none;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+        #loader {
+            font-size: 1.2em;
+            color: #1DB954;
+            margin-bottom: 20px;
+            animation: pulse 1.5s infinite;
+        }
+        a.home-link {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 25px;
+            background-color: #1DB954;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background 0.3s, transform 0.2s;
+        }
+        a.home-link:hover {
+            background-color: #17a44d;
+            transform: scale(1.05);
+        }
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.05); opacity: 0.7; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: #555;
+        }
+        footer a {
+            color: #1DB954;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        footer a:hover {
+            color: #17a44d;
+        }
+        /* Particles background */
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Particles Background -->
+    <div id="particles-js"></div>
+
+    <h1>Request Early Access</h1>
+    <p class="subtitle">Fill the form below to reserve your <strong>@meromail.com</strong> email address.</p>
+
+    <div id="loader">Loading Form...</div>
+
+    <div class="form-container">
+        <!-- Correct Embedded Google Form -->
+        <iframe id="formFrame" src="https://docs.google.com/forms/d/e/1FAIpQLScTRR7_hhGdtdkB7NoV7Q_GmWuzP3FUmRKnu_I8moAhdIn2kQ/viewform?embedded=true" onload="hideLoader()">Loading…</iframe>
+    </div>
+
+    <a class="home-link" href="index.html">← Back to Home</a>
+
+    <footer>
+        &copy; 2025 Meromail. Made with ❤️ by <a href="https://merofwd.com/site" target="_blank">Amit</a>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+    function hideLoader() {
+        document.getElementById("loader").style.display = "none";
+    }
+    particlesJS("particles-js", {
+        "particles": {
+            "number": { "value": 80 },
+            "size": { "value": 2 },
+            "move": { "speed": 0.5 },
+            "line_linked": { "enable": false },
+            "opacity": { "value": 0.2 }
+        }
+    });
+    </script>
+
+</body>
+</html>
+<!--     </script>
+ -->

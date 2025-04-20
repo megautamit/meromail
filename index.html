@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Meromail - Secure Email for Nepal</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Meromail offers secure, privacy-focused email addresses for Nepal. Get your own @meromail.com today!">
+    <meta name="keywords" content="Meromail, Email, Secure Email Nepal, Privacy Email, Meromail Nepal">
+    <meta name="author" content="Amit Gautam">
+
+    <!-- OpenGraph Meta Tags (for social media sharing) -->
+    <meta property="og:title" content="Meromail - Secure Email for Nepal">
+    <meta property="og:description" content="Request your @meromail.com email address today. Privacy-first email hosting, made in Nepal.">
+    <meta property="og:image" content="https://meromail.com/og-image.png"> <!-- (Upload your real OG banner later) -->
+    <meta property="og:url" content="https://meromail.com/">
+    <meta property="og:type" content="website">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #0D0D0D;
+            color: #F0F0F0;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        header {
+            padding: 20px;
+            animation: fadeInDown 2s;
+        }
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+        p.tagline {
+            font-size: 1.2em;
+            color: #aaa;
+            margin-top: 0;
+        }
+        .envelope {
+            font-size: 5em;
+            animation: float 3s ease-in-out infinite;
+            margin-top: 20px;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .coming-soon {
+            font-size: 2em;
+            color: #1DB954;
+            animation: pulse 1.5s infinite;
+            margin-top: 20px;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.05); opacity: 0.7; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        a.button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 25px;
+            font-size: 1em;
+            background-color: #1DB954;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.2s;
+            width: auto;
+            max-width: 90%;
+        }
+        a.button:hover {
+            background-color: #17a44d;
+            transform: scale(1.05);
+        }
+        footer {
+            text-align: center;
+            padding: 15px;
+            font-size: 0.9em;
+            color: #777;
+        }
+        .credit {
+            margin-top: 10px;
+            font-size: 0.9em;
+            color: #555;
+        }
+        .credit a {
+            color: #1DB954;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .credit a:hover {
+            color: #17a44d;
+        }
+        /* Particles background */
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Particles Background -->
+    <div id="particles-js"></div>
+
+    <header>
+        <div class="envelope">✉️</div>
+        <h1>Meromail</h1>
+        <p class="tagline">Simple. Secure. Private. Your email, your way.</p>
+    </header>
+
+    <main>
+        <div class="coming-soon">Coming Soon...</div>
+
+        <p style="margin-top: 20px;">
+            Get ready to create your personal <strong>@meromail.com</strong> address.<br>
+            Privacy-first email hosted proudly in Nepal.
+        </p>
+
+        <a class="button" href="signup.html">Request Early Access</a>
+
+        <div class="credit">
+            A project by Amit | <a href="https://merofwd.com/site" target="_blank">Visit my site</a>
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2025 Meromail. | <a href="/terms.html" style="color:#777;">Terms & Conditions</a>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+    particlesJS("particles-js", {
+        "particles": {
+            "number": { "value": 80 },
+            "size": { "value": 2 },
+            "move": { "speed": 0.5 },
+            "line_linked": { "enable": false },
+            "opacity": { "value": 0.2 }
+        }
+    });
+    </script>
+
+</body>
+</html>
+<!-- End of HTML Document -->
