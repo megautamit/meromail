@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meromail - Request Early Access</title>
 
     <!-- Favicon -->
@@ -12,148 +13,528 @@
     <meta name="keywords" content="Meromail, Email, Secure Email Nepal, Privacy Email, Meromail Nepal">
     <meta name="author" content="Amit Gautam">
 
-    <!-- OpenGraph Meta Tags (for social media sharing) -->
+    <!-- OpenGraph Meta Tags -->
     <meta property="og:title" content="Meromail - Secure Email for Nepal">
     <meta property="og:description" content="Request your @meromail.com email address today. Privacy-first email hosting, made in Nepal.">
-    <meta property="og:image" content="https://meromail.com/og-image.png"> <!-- Update this if needed -->
+    <meta property="og:image" content="https://meromail.com/og-image.png">
     <meta property="og:url" content="https://meromail.com/signup.html">
     <meta property="og:type" content="website">
 
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
+        :root {
+            --primary: #007AFF;
+            --secondary: #5856D6;
+            --accent: #FF2D55;
+            --background: #000000;
+            --text: #FFFFFF;
+            --text-secondary: rgba(255, 255, 255, 0.7);
+            --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
+            --accent-gradient: linear-gradient(135deg, var(--accent), var(--secondary));
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Poppins', sans-serif;
-            background-color: #0D0D0D;
-            color: #F0F0F0;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background);
+            color: var(--text);
             text-align: center;
-            padding: 20px;
+            min-height: 100vh;
             overflow-x: hidden;
+            line-height: 1.6;
         }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            width: 100%;
+            position: relative;
+            z-index: 2;
+        }
+
         h1 {
-            font-size: 2.8em;
-            margin-top: 20px;
-            animation: fadeInDown 1.5s;
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            margin: 20px 0;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: fadeInDown 1s ease-out;
+            position: relative;
+            display: inline-block;
         }
-        p.subtitle {
-            font-size: 1.2em;
-            color: #aaa;
-            margin-bottom: 30px;
-            animation: fadeInDown 2s;
+
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 3px;
+            background: var(--gradient);
+            animation: expand-width 1.5s ease-out 1s forwards;
         }
+
+        @keyframes expand-width {
+            0% { width: 0; }
+            100% { width: 80%; }
+        }
+
+        .subtitle {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+            animation: fadeInDown 1s ease-out 0.3s backwards;
+            position: relative;
+        }
+
+        .subtitle::before, .subtitle::after {
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 1px;
+            background: var(--gradient);
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0;
+            animation: fade-in 1s ease-out 1.5s forwards;
+        }
+
+        .subtitle::before {
+            left: 20%;
+        }
+
+        .subtitle::after {
+            right: 20%;
+        }
+
+        @keyframes fade-in {
+            0% { opacity: 0; }
+            100% { opacity: 0.7; }
+        }
+
         .form-container {
-            background: rgba(17,17,17,0.9);
+            background: rgba(255, 255, 255, 0.05);
             padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 0 20px rgba(29,185,84,0.5);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
             max-width: 800px;
-            margin: 0 auto 30px auto;
-            animation: fadeInUp 2s;
+            margin: 0 auto 40px auto;
+            animation: fadeInUp 1s ease-out 0.6s backwards;
+            box-shadow: 0 10px 30px rgba(0, 122, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+            transform-style: preserve-3d;
+            transform: translateZ(0);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
+
+        .form-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .form-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 122, 255, 0.2);
+        }
+
+        .form-container:hover::before {
+            opacity: 1;
+        }
+
         iframe {
             width: 100%;
             height: 1414px;
             border: none;
-            border-radius: 10px;
-            margin-top: 10px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.02);
+            transition: all 0.3s ease;
         }
+
         #loader {
-            font-size: 1.2em;
-            color: #1DB954;
-            margin-bottom: 20px;
-            animation: pulse 1.5s infinite;
-        }
-        a.home-link {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin: 20px 0;
+            animation: pulse 2s infinite;
+            position: relative;
             display: inline-block;
-            margin-top: 30px;
-            padding: 12px 25px;
-            background-color: #1DB954;
+        }
+
+        #loader::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(0, 122, 255, 0.1) 0%, rgba(0, 122, 255, 0) 70%);
+            border-radius: 50%;
+            z-index: -1;
+            animation: pulse-glow 3s infinite alternate;
+        }
+
+        @keyframes pulse-glow {
+            0% { transform: scale(0.8); opacity: 0.5; }
+            100% { transform: scale(1.2); opacity: 0.8; }
+        }
+
+        .home-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 16px 32px;
+            font-size: 1.1rem;
+            background: var(--gradient);
             color: white;
             text-decoration: none;
-            border-radius: 8px;
-            transition: background 0.3s, transform 0.2s;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            margin: 20px 0;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
         }
-        a.home-link:hover {
-            background-color: #17a44d;
-            transform: scale(1.05);
+
+        .home-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(255, 255, 255, 0.1), transparent);
+            transform: translateY(-100%);
+            transition: transform 0.3s ease;
+            z-index: -1;
         }
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-30px); }
-            to { opacity: 1; transform: translateY(0); }
+
+        .home-link:hover::before {
+            transform: translateY(0);
         }
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
+
+        .home-link:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 122, 255, 0.3);
         }
-        @keyframes pulse {
-            0% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.05); opacity: 0.7; }
-            100% { transform: scale(1); opacity: 1; }
+
+        .home-link::after {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: var(--gradient);
+            z-index: -2;
+            border-radius: 14px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
+
+        .home-link:hover::after {
+            opacity: 0.5;
+        }
+
+        .home-link i {
+            transition: transform 0.3s ease;
+        }
+
+        .home-link:hover i {
+            transform: translateX(-5px);
+        }
+
         footer {
             text-align: center;
-            margin-top: 30px;
-            font-size: 0.9em;
-            color: #555;
+            padding: 20px;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-top: 40px;
+            position: relative;
+            z-index: 2;
         }
+
         footer a {
-            color: #1DB954;
+            color: var(--primary);
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
         }
+
+        footer a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--gradient);
+            transition: width 0.3s ease;
+        }
+
         footer a:hover {
-            color: #17a44d;
+            color: var(--secondary);
         }
-        /* Particles background */
+
+        footer a:hover::after {
+            width: 100%;
+        }
+
         #particles-js {
             position: fixed;
             width: 100%;
             height: 100%;
-            z-index: -1;
+            z-index: 1;
             top: 0;
             left: 0;
+        }
+
+        .cursor-glow {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            background: radial-gradient(circle, rgba(0, 122, 255, 0.5) 0%, rgba(0, 122, 255, 0) 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate(-50%, -50%);
+            transition: width 0.3s ease, height 0.3s ease;
+        }
+
+        .form-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            animation: fadeInDown 1s ease-out 0.9s backwards;
+        }
+
+        .form-icon {
+            font-size: 2rem;
+            margin-right: 15px;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .form-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        @keyframes fadeInDown {
+            from { 
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from { 
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.05); opacity: 0.8; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px 15px;
+            }
+            
+            .form-container {
+                padding: 20px;
+            }
         }
     </style>
 </head>
 <body>
-
-    <!-- Particles Background -->
     <div id="particles-js"></div>
+    <div class="cursor-glow"></div>
 
-    <h1>Request Early Access</h1>
-    <p class="subtitle">Fill the form below to reserve your <strong>@meromail.com</strong> email address.</p>
+    <div class="container">
+        <h1>Request Early Access</h1>
+        <p class="subtitle">Fill the form below to reserve your <strong>@meromail.com</strong> email address.</p>
 
-    <div id="loader">Loading Form...</div>
+        <div id="loader">Loading Form...</div>
 
-    <div class="form-container">
-        <!-- Correct Embedded Google Form -->
-        <iframe id="formFrame" src="https://docs.google.com/forms/d/e/1FAIpQLScTRR7_hhGdtdkB7NoV7Q_GmWuzP3FUmRKnu_I8moAhdIn2kQ/viewform?embedded=true" onload="hideLoader()">Loading…</iframe>
+        <div class="form-container">
+            <div class="form-header">
+                <div class="form-icon">
+                    <i class="fas fa-envelope-open-text"></i>
+                </div>
+                <div class="form-title">Join the Waitlist</div>
+            </div>
+            <iframe id="formFrame" src="https://docs.google.com/forms/d/e/1FAIpQLScTRR7_hhGdtdkB7NoV7Q_GmWuzP3FUmRKnu_I8moAhdIn2kQ/viewform?embedded=true" onload="hideLoader()">Loading…</iframe>
+        </div>
+
+        <a class="home-link" href="index.html">
+            <i class="fas fa-arrow-left"></i>
+            <span>Back to Home</span>
+        </a>
+
+        <footer>
+            &copy; 2025 Meromail. Made with ❤️ by <a href="https://merofwd.com/site" target="_blank">Amit</a>
+        </footer>
     </div>
 
-    <a class="home-link" href="index.html">← Back to Home</a>
-
-    <footer>
-        &copy; 2025 Meromail. Made with ❤️ by <a href="https://merofwd.com/site" target="_blank">Amit</a>
-    </footer>
-
-    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
-    function hideLoader() {
-        document.getElementById("loader").style.display = "none";
-    }
-    particlesJS("particles-js", {
-        "particles": {
-            "number": { "value": 80 },
-            "size": { "value": 2 },
-            "move": { "speed": 0.5 },
-            "line_linked": { "enable": false },
-            "opacity": { "value": 0.2 }
+        function hideLoader() {
+            document.getElementById("loader").style.display = "none";
         }
-    });
-    </script>
 
+        // Custom cursor effect
+        document.addEventListener('mousemove', function(e) {
+            const cursor = document.querySelector('.cursor-glow');
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+
+        // Expand cursor on interactive elements
+        const interactiveElements = document.querySelectorAll('a, button, .form-container');
+        interactiveElements.forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                document.querySelector('.cursor-glow').style.width = '40px';
+                document.querySelector('.cursor-glow').style.height = '40px';
+            });
+            
+            el.addEventListener('mouseleave', () => {
+                document.querySelector('.cursor-glow').style.width = '20px';
+                document.querySelector('.cursor-glow').style.height = '20px';
+            });
+        });
+
+        // Enhanced particles
+        particlesJS("particles-js", {
+            "particles": {
+                "number": {
+                    "value": 100,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": ["#007AFF", "#5856D6", "#FF2D55"]
+                },
+                "shape": {
+                    "type": ["circle", "triangle"],
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    }
+                },
+                "opacity": {
+                    "value": 0.2,
+                    "random": true,
+                    "anim": {
+                        "enable": true,
+                        "speed": 1,
+                        "opacity_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "size": {
+                    "value": 3,
+                    "random": true,
+                    "anim": {
+                        "enable": true,
+                        "speed": 2,
+                        "size_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#007AFF",
+                    "opacity": 0.1,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 1,
+                    "direction": "none",
+                    "random": true,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                    "attract": {
+                        "enable": true,
+                        "rotateX": 600,
+                        "rotateY": 1200
+                    }
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "grab"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 140,
+                        "line_linked": {
+                            "opacity": 0.3
+                        }
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    }
+                }
+            },
+            "retina_detect": true
+        });
+    </script>
 </body>
 </html>
-<!--     </script>
- -->
