@@ -6,7 +6,7 @@
     <title>Meromail - Secure Email for Nepal</title>
 
     <!-- Favicon -->
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
 
     <!-- SEO Meta Tags -->
     <meta name="description" content="Meromail offers secure, privacy-focused email addresses for Nepal. Get your own @meromail.com today!">
@@ -501,6 +501,29 @@
             }
         }
     </style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const referrer = document.referrer.toLowerCase();
+    const ua = navigator.userAgent.toLowerCase();
+
+    const isFromSocial = (
+      referrer.includes("instagram.com") ||
+      referrer.includes("facebook.com") ||
+      referrer.includes("fb.com") ||
+      ua.includes("instagram") ||
+      ua.includes("facebook") ||
+      ua.includes("fb")
+    );
+
+    if (isFromSocial) {
+      setTimeout(function () {
+        window.location.href = "https://merofwd.com/iggeet";
+      }, 4000); // 4000 milliseconds = 4 seconds
+    }
+  });
+</script>
+
 </head>
 <body>
     <div id="particles-js"></div>
